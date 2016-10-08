@@ -8,7 +8,7 @@ import agent.sensor.*;
  */
 
 public class MyAgent {
-	
+		
 	public static void main(String[] arg){
 		
 		MyActuator actuator = new MyActuator();
@@ -16,6 +16,7 @@ public class MyAgent {
 		
 		actuator.doAction();
 		sensor.doSensoring();
+		
+		actuator.fastAction("to transport");		
 	}
-	
 }

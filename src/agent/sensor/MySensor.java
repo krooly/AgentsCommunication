@@ -13,7 +13,7 @@ public class MySensor {
 	}
 	
 	public void doSensoring(){
-		System.out.println(mySensor + " in process...");
-		System.out.println(mySensor + " is complete.");
+		System.out.println("Agent@host: " + mySensor + " in process...");
+		System.out.println("Agent@host: " + mySensor + " is complete.");
 	}
 }

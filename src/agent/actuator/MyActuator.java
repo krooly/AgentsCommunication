@@ -4,16 +4,23 @@ public class MyActuator {
 	
 	private String myAction = "My action";
 	
-	public MyActuator(){
-		//constructor
+	public MyActuator(/*MyAction action*/){
+		//setAction(action)
 	}
 	
-	public void setAction(String action){
+	public void setAction(String action/*MyAction action*/){
 		myAction = action;
+		//action.getName();
 	}
 	
-	public void doAction(){
-		System.out.println(myAction + " in process...");
-		System.out.println(myAction + " is complete.");
+	public void doAction(/*MyAction action*/){
+		System.out.println("Agent@host: " + myAction + " in process...");
+		//action.run()
+		System.out.println("Agent@host: " + myAction + " is complete.");
+	}
+	
+	public void fastAction(String action/*MyAction action*/){
+		setAction(action);
+		doAction();
 	}
 }
