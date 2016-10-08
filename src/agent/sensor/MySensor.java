@@ -1,5 +1,9 @@
 package agent.sensor;
 
+/**
+ * @author krooly
+ */
+
 public class MySensor {
 
 	private String mySensor = "Sensoring";
@@ -14,6 +18,14 @@ public class MySensor {
 	
 	public void doSensoring(){
 		System.out.println("Agent@host: " + mySensor + " in process...");
+		//sensoring();
+		//
 		System.out.println("Agent@host: " + mySensor + " is complete.");
 	}
+	
+	/* NOOOOOOOO
+	public ResultSensoring result(Sensoring sensoring){
+		return sensoring.getResult();
+	}
+	 */
 }
