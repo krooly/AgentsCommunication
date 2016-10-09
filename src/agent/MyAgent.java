@@ -10,13 +10,15 @@ import agent.sensor.*;
 public class MyAgent {
 		
 	public static void main(String[] arg){
+		String agentName = "agent@host";
 		
-		MyActuator actuator = new MyActuator();
-		MySensor sensor = new MySensor();
+		MyAction get = new MyAction("get");
+		MySensoring load = new MySensoring("Sensoring load");
+		
+		MyActuator actuator = new MyActuator(agentName, get);
+		MySensor sensor = new MySensor(agentName, load);
 		
 		actuator.doAction();
-		sensor.doSensoring();
-		
-		actuator.fastAction("to transport");		
+		sensor.doSensoring();	
 	}
 }

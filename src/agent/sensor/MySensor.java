@@ -6,26 +6,31 @@ package agent.sensor;
 
 public class MySensor {
 
-	private String mySensor = "Sensoring";
+	private MySensoring sensoring;
+	private String agentName;
 	
-	public MySensor(){
-		//constructor
+	public MySensor(String agentName, MySensoring sensoring){
+		this.agentName = agentName;
+		setSensoring(sensoring);
 	}
 	
-	public void setSensor(String sensor){
-		mySensor = sensor;
+	public void setSensoring(MySensoring sensoring){
+		this.sensoring = sensoring;
 	}
 	
 	public void doSensoring(){
-		System.out.println("Agent@host: " + mySensor + " in process...");
-		//sensoring();
-		//
-		System.out.println("Agent@host: " + mySensor + " is complete.");
+		System.out.println(agentName + " "
+							+ sensoring.getName()
+							+ " in process...");
+		if (!sensoring.run()) {
+			System.out.println(	"WARNING *** "
+								+ agentName + ": "
+								+ sensoring.getName() + " :: "
+								+ "runingExeption!");
+		} else {
+		System.out.println(agentName + " "
+							+ sensoring.getName()
+							+ " is complete.");
+		}
 	}
-	
-	/* NOOOOOOOO
-	public ResultSensoring result(Sensoring sensoring){
-		return sensoring.getResult();
-	}
-	 */
 }
